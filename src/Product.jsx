@@ -88,29 +88,28 @@ function Product() {
 				</select>
 			</div>
 			<div className="min-h-[60vh] flex justify-center">
-				<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 w-full">
+				<div className="product-grid w-full">
 					{filtered.map(product => (
-						<article key={product.id} className="border rounded-lg p-4 shadow hover:shadow-lg transition relative">
+						<article key={product.id} className="product-card card-soft relative">
 							<button
 								aria-label={favourites.includes(product.id) ? 'Remove favourite' : 'Add favourite'}
 								onClick={() => toggleFavourite(product.id)}
-								className={`absolute top-3 right-3 text-2xl focus:outline-none ${favourites.includes(product.id) ? 'text-yellow-400' : 'text-gray-300 hover:text-gray-500'}`}
+								className={`star-hit absolute top-3 right-3 focus:outline-none ${favourites.includes(product.id) ? 'star-on' : 'star-off'}`}
 							>
 								{favourites.includes(product.id) ? '★' : '☆'}
 							</button>
 							<a href={`/items/${product.id}`} className="block focus:ring-2 focus:ring-blue-400 outline-none" tabIndex={0}>
 								<div className="mb-2 flex justify-center">
-									<img src={product.images[0]} alt={product.name} className="h-24 w-24 object-cover rounded" />
+									<img src={product.images[0]} alt={product.name} className="h-24 w-24 object-cover product-image" />
 								</div>
-								<h2 className="text-lg font-bold">{product.name}</h2>
-								<p className="text-sm text-gray-500">{product.brand} &middot; {product.type}</p>
+								<h2 className="text-lg font-bold product-title">{product.name}</h2>
+								<p className="text-sm text-gray-500 product-meta">{product.brand} &middot; {product.type}</p>
 								<p className="mt-2 text-gray-700">{product.description}</p>
-								<div className="mt-2 text-blue-700 font-bold text-xl">
+								<div className="mt-2 price text-xl">
 									{product.discountPercent ? (
 										<>
-											<span className="line-through text-gray-400 mr-2">€{product.price.toFixed(2)}</span>
-											<span className="text-red-600 font-bold">€{(product.price * (1 - product.discountPercent / 100)).toFixed(2)}</span>
-											<span className="ml-2 text-xs bg-red-100 text-red-700 px-2 py-1 rounded">-{product.discountPercent}%</span>
+											<span className="old">€{product.price.toFixed(2)}</span>
+											<span>€{(product.price * (1 - product.discountPercent / 100)).toFixed(2)}</span>
 										</>
 									) : (
 										<>€{product.price.toFixed(2)}</>

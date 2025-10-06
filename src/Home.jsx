@@ -46,14 +46,14 @@ function Home() {
         <button onClick={handlePrev} disabled={start === 0} className="px-2 py-1 bg-gray-200 rounded-full text-xl font-bold disabled:opacity-50">&#8592;</button>
         <div className="flex gap-6">
           {visible.map(item => (
-            <div key={item.id} className="border rounded-lg p-4 shadow w-64 flex flex-col items-center cursor-pointer hover:shadow-lg transition relative">
+            <div key={item.id} className="card-soft w-64 flex flex-col items-center relative">
               <button
                 aria-label={favourites.includes(item.id) ? 'Remove favourite' : 'Add favourite'}
                 onClick={() => toggleFavourite(item.id)}
-                className={`absolute top-3 right-3 text-2xl ${favourites.includes(item.id) ? 'text-yellow-400' : 'text-gray-300 hover:text-gray-500'}`}
+                className={`star-hit absolute top-3 right-3 ${favourites.includes(item.id) ? 'star-on' : 'star-off'}`}
               >{favourites.includes(item.id) ? '★' : '☆'}</button>
               <a href={`/items/${item.id}`} style={{ textDecoration: 'none' }} className="block w-full text-center">
-                <img src={item.images[0]} alt={item.name} className="h-24 w-24 object-cover rounded mb-2" />
+                <img src={item.images[0]} alt={item.name} className="h-24 w-24 object-cover product-image mb-2" />
                 <div className="font-bold text-lg text-blue-700 text-center">{item.name}</div>
                 <div className="text-sm text-gray-500 text-center">{item.brand} &middot; {item.type}</div>
                 <div className="mt-2 text-gray-700 text-center text-sm">{item.description}</div>

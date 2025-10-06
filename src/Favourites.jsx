@@ -45,8 +45,8 @@ export default function Favourites() {
 			) : (
 				<div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
 					{favProducts.map(p => (
-						<div key={p.id} className="border rounded p-4 flex gap-4 items-center">
-							<img src={p.images[0]} alt={p.name} className="h-20 w-20 object-cover rounded" />
+						<div key={p.id} className="card-soft flex gap-4 items-center">
+							<img src={p.images[0]} alt={p.name} className="h-20 w-20 object-cover product-image" />
 							<div className="flex-1">
 								<div className="font-bold">{p.name}</div>
 								<div className="text-xs text-gray-500">{p.brand} &middot; {p.type}</div>
@@ -58,8 +58,8 @@ export default function Favourites() {
 								) : (`€${p.price.toFixed(2)}`)}</div>
 							</div>
 							<div className="flex flex-col gap-2">
-								<button className="px-3 py-1 bg-blue-600 text-white rounded" onClick={() => addToCart(p.id)}>Add to cart</button>
-								<button className="px-3 py-1 bg-red-100 text-red-700 rounded" onClick={() => removeFavourite(p.id)}>Remove</button>
+								<button className="btn btn-primary" onClick={() => addToCart(p.id)}>Add to cart</button>
+								<button className="btn btn-ghost" onClick={() => removeFavourite(p.id)}>Remove</button>
 							</div>
 						</div>
 					))}

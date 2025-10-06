@@ -17,7 +17,7 @@
   --bg: #fff;
   --fg: #222;
   --card: #f3f4f6;
-  --highlight: #ff9800;
+  --highlight: #3b82f6; /* softer blue */
   --header: #f9fafb;
   --border: #e5e7eb;
 }
@@ -85,10 +85,10 @@ button:focus-visible {
     background-color: #ffffff;
   }
   a:hover {
-    color: #747bff;
+    color: #5b6df6;
   }
   button {
-    background-color: #f9f9f9;
+    background-color: #ffffff;
   }
 .card, .border, .rounded-lg, .shadow {
   background: var(--card) !important;
@@ -113,3 +113,64 @@ button:focus-visible {
 .text-gray-500, .text-gray-600, .text-gray-700, .text-gray-800 {
   color: var(--fg) !important;
 }
+
+/* Star/favourite button visual polish */
+.text-2xl { line-height: 1; }
+
+button[aria-label*="favourite"], .absolute button[aria-label*="favourite"] {
+  background: transparent;
+  border: none;
+  padding: 0.15rem 0.4rem;
+  cursor: pointer;
+  transition: transform 120ms ease, color 120ms ease;
+}
+button[aria-label*="favourite"]:hover {
+  transform: scale(1.08);
+}
+
+/* Slight lift on product cards */
+.card, .border, .rounded-lg, .shadow {
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+.border:hover, .rounded-lg:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08) !important;
+}
+
+/* Minimal additive styles (non-invasive) */
+.star-on { color: #ffb86b; }
+.star-off { color: #cbd5e1; }
+.product-card { border-radius: 10px; overflow: hidden; }
+.product-card .product-image { border-radius: 8px; }
+.btn { padding: 0.5rem 0.75rem; border-radius: 8px; }
+
+/* Additional subtle polish (non-invasive) */
+.container { max-width: 1200px; margin: 0 auto; padding: 1rem; }
+.grid-gap { gap: 1.25rem; }
+.product-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); grid-gap: 1rem; }
+.card-soft { border-radius: 12px; background: var(--card); border: 1px solid var(--border); padding: 0.85rem; box-shadow: 0 6px 18px rgba(16,24,40,0.04); transition: transform 180ms ease, box-shadow 180ms ease; }
+.card-soft:hover { transform: translateY(-6px); box-shadow: 0 18px 42px rgba(16,24,40,0.08); }
+.muted { color: rgba(34,34,34,0.55); }
+.price { font-weight: 700; color: var(--highlight); }
+.price .old { text-decoration: line-through; color: rgba(34,34,34,0.45); font-weight: 500; margin-right: 0.5rem; }
+.small { font-size: 0.85rem; }
+.gap-2 { gap: 0.5rem; }
+
+/* improve star hit area */
+.star-hit { padding: 0.25rem; border-radius: 6px; }
+
+/* Footer styles */
+.site-footer { background: var(--card); border-top: 1px solid var(--border); color: var(--fg); }
+.footer-inner { max-width: 1200px; margin: 0 auto; padding: 1.25rem; display: flex; gap: 1.5rem; align-items: start; justify-content: space-between; }
+.footer-col { flex: 1; min-width: 160px; }
+.footer-col h4 { margin: 0 0 0.5rem 0; color: var(--fg); }
+.footer-col a { color: var(--highlight); text-decoration: none; margin-bottom: 0.25rem; display: inline-block; }
+.footer-col a:hover { text-decoration: underline; }
+.site-footer .muted { color: var(--fg); opacity: 0.7; }
+
+@media (max-width: 640px) {
+  .footer-inner { flex-direction: column; gap: 0.75rem; }
+  .footer-col { min-width: auto; }
+}
+
+

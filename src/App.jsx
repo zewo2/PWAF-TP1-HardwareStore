@@ -43,7 +43,28 @@ function App() {
           <Route path="/contacts" element={<Contacts />} />
         </Routes>
       </main>
-      <footer className="bg-gray-100 text-center p-2 text-xs text-gray-500">© 2025 Hardware Store</footer>
+      
+      <footer className="site-footer">
+        <div className="container footer-inner">
+          <div className="footer-col">
+            <h4 className="text-sm font-bold">Hardware Store</h4>
+            <p className="text-xs muted">Quality components, great prices.</p>
+          </div>
+          <div className="footer-col">
+            <h4 className="text-sm font-bold">Quick Links</h4>
+            <nav className="flex flex-col small">
+              <Link to="/">Home</Link>
+              <Link to="/items">Products</Link>
+              <Link to="/favourites">Favourites</Link>
+            </nav>
+          </div>
+          <div className="footer-col">
+            <h4 className="text-sm font-bold">Contact</h4>
+            <Link to="/contacts">Contacts</Link>
+            <div className="mt-2 small muted">© 2025 Hardware Store</div>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
