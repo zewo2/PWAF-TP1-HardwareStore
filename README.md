@@ -1,16 +1,64 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Hardware Store SPA
 
-Currently, two official plugins are available:
+A modern, responsive single-page application for a computer hardware store, built with React, Tailwind CSS v4, and Vite. Features product browsing, cart, favourites, dark mode, and more.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
+- ⚡ Fast SPA with React Router
+- 🛒 Client-side cart (localStorage persistence)
+- ⭐ Favourites (localStorage persistence)
+- 🔍 Product grid with search, filter, and discounts
+- 📦 Product details with image gallery
+- 🎨 Dark mode toggle and brand colors
+- 🖥️ Responsive design (Tailwind CSS v4)
+- 📝 Contact form with autosave (localStorage)
 
-## React Compiler
+## Getting Started
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+1. **Install dependencies**
+	```bash
+	npm install
+	```
+2. **Start development server**
+	```bash
+	npm run dev
+	```
+3. **Open in browser**
+	Navigate to `http://localhost:5173` (or the port shown in your terminal).
 
-## Expanding the ESLint configuration
+## Project Structure
+```
+PWAF-TP1/
+├── public/
+├── src/
+│   ├── App.jsx
+│   ├── Home.jsx
+│   ├── Product.jsx
+│   ├── ProductDetails.jsx
+│   ├── Cart.jsx
+│   ├── CartCount.jsx
+│   ├── Favourites.jsx
+│   ├── Contacts.jsx
+│   ├── ThemeToggle.jsx
+│   ├── DropdownMenu.jsx
+│   ├── assets/
+│   └── index.css
+├── index.html
+├── package.json
+├── vite.config.js
+└── README.md
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Customization
+- **Brand colors**: Easily change in `src/index.css` via CSS variables.
+- **Products**: Edit or expand product data in `src/data.js`.
+
+## Accessibility & Responsiveness
+- Built with accessibility and mobile-first design in mind.
+- Uses semantic HTML and ARIA roles where appropriate.
+
+## License
+MIT
+
+---
+Made for PWAF coursework, 2025.
