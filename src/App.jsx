@@ -15,7 +15,7 @@ function App() {
   return (
     <div className="min-h-screen flex flex-col">
       <header className="bg-blue-700 text-white p-4 flex items-center justify-between">
-        <h1 className="text-2xl font-bold">Hardware Store</h1>
+  <h1 className="text-2xl font-bold" style={{ color: 'var(--bg)' }}>Hardware Store</h1>
         <nav className="flex items-center gap-4 flex-1">
           <Link to="/" className="px-4 py-2 rounded shadow transition" style={{ background: 'var(--card)', color: 'var(--highlight)' }}>Home</Link>
           <DropdownMenu />
@@ -35,12 +35,12 @@ function App() {
       <main className="flex-1 p-4">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/about" element={<AboutUs />} />
           <Route path="/items" element={<Product />} />
           <Route path="/items/:id" element={<ProductDetails />} />
-          <Route path="/cart" element={<Cart />} />
           <Route path="/favourites" element={<Favourites />} />
+          <Route path="/about" element={<AboutUs />} />
           <Route path="/contacts" element={<Contacts />} />
+          <Route path="/cart" element={<Cart />} />
         </Routes>
       </main>
       <footer className="bg-gray-100 text-center p-2 text-xs text-gray-500">© 2025 Hardware Store</footer>
