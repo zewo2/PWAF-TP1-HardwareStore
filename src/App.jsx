@@ -17,10 +17,10 @@ function App() {
       <header className="bg-blue-700 text-white p-4 flex items-center justify-between">
   <h1 className="text-2xl font-bold" style={{ color: 'var(--bg)' }}>Hardware Store</h1>
         <nav className="flex items-center gap-4 flex-1">
-          <Link to="/" className="px-4 py-2 rounded shadow transition" style={{ background: 'var(--card)', color: 'var(--highlight)' }}>Home</Link>
+          <Link to="/" className="px-4 py-2 rounded shadow transition-transform duration-150 hover:scale-95 focus:scale-95" style={{ background: 'var(--card)', color: 'var(--highlight)' }}>Home</Link>
           <DropdownMenu />
-          <Link to="/favourites" className="px-4 py-2 rounded shadow transition" style={{ background: 'var(--card)', color: 'var(--highlight)' }}>Favourites</Link>
-          <Link to="/contacts" className="px-4 py-2 rounded shadow transition" style={{ background: 'var(--card)', color: 'var(--highlight)' }}>Contacts</Link>
+          <Link to="/favourites" className="px-4 py-2 rounded shadow transition-transform duration-150 hover:scale-95 focus:scale-95" style={{ background: 'var(--card)', color: 'var(--highlight)' }}>Favourites</Link>
+          <Link to="/contacts" className="px-4 py-2 rounded shadow transition-transform duration-150 hover:scale-95 focus:scale-95" style={{ background: 'var(--card)', color: 'var(--highlight)' }}>Contacts</Link>
         </nav>
         <div className="flex items-center ml-auto">
           <ThemeToggle />

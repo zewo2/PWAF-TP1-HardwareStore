@@ -116,7 +116,7 @@ function Product() {
 					<a
 						key={product.id}
 						href={`/items/${product.id}`}
-						className="border rounded-lg p-4 shadow hover:shadow-lg transition block hover:ring-2 hover:ring-blue-400 focus:ring-2 focus:ring-blue-400 outline-none"
+						className="border rounded-lg p-4 shadow hover:shadow-lg transition block hover:ring-2 hover:ring-orange-400 focus:ring-2 focus:ring-blue-400 outline-none"
 						tabIndex={0}
 					>
 						<div className="mb-2 flex justify-center">

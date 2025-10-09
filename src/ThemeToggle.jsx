@@ -36,7 +36,7 @@ export default function ThemeToggle() {
 
   return (
     <button
-      className="mr-4 px-3 py-2 rounded-full border font-bold"
+      className="mr-4 px-3 py-2 rounded-full font-bold transition-transform duration-150 hover:scale-95 focus:scale-95"
       style={{ background: 'var(--card)', color: 'var(--highlight)', borderColor: 'var(--border)' }}
       onClick={() => setDark(d => !d)}
       aria-label="Toggle dark mode"
