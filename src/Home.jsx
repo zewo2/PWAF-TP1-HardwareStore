@@ -18,7 +18,7 @@ function Home() {
   return (
     <div>
       <h1 className="text-4xl md:text-6xl font-bold text-blue-600 text-center mb-2">
-        Welcome to the Hardware Store
+        Welcome to BuildIT
       </h1>
       <p className="mt-4 text-gray-600 text-center mb-8">
         Lose yourself in our selection of powerful tech.

@@ -15,12 +15,13 @@ function App() {
   return (
     <div className="min-h-screen flex flex-col">
       <header className="bg-blue-700 text-white p-4 flex items-center justify-between">
-  <h1 className="text-2xl font-bold" style={{ color: 'var(--bg)' }}>Hardware Store</h1>
+  <h1 className="text-2xl font-bold" style={{ color: 'var(--bg)' }}>BuildIT</h1>
         <nav className="flex items-center gap-4 flex-1">
           <Link to="/" className="px-4 py-2 rounded shadow transition-transform duration-150 hover:scale-95 focus:scale-95" style={{ background: 'var(--card)', color: 'var(--highlight)' }}>Home</Link>
           <DropdownMenu />
           <Link to="/favourites" className="px-4 py-2 rounded shadow transition-transform duration-150 hover:scale-95 focus:scale-95" style={{ background: 'var(--card)', color: 'var(--highlight)' }}>Favourites</Link>
           <Link to="/contacts" className="px-4 py-2 rounded shadow transition-transform duration-150 hover:scale-95 focus:scale-95" style={{ background: 'var(--card)', color: 'var(--highlight)' }}>Contacts</Link>
+            <Link to="/about" className="px-4 py-2 rounded shadow transition-transform duration-150 hover:scale-95 focus:scale-95" style={{ background: 'var(--card)', color: 'var(--highlight)' }}>About Us</Link>
         </nav>
         <div className="flex items-center ml-auto">
           <ThemeToggle />
@@ -49,11 +50,11 @@ function App() {
         >
           <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center md:items-start justify-between gap-8 px-4 py-4">
             {/* Brand left */}
-            <div className="font-bold text-lg md:text-left text-center w-full md:w-auto mb-4 md:mb-0" style={{ color: 'var(--highlight)' }}>Hardware Store</div>
+            <div className="font-bold text-lg md:text-left text-center w-full md:w-auto mb-4 md:mb-0" style={{ color: 'var(--highlight)' }}>BuildIT</div>
             {/* Contact info centered*/}
             <div className="flex-1 text-xs text-center md:text-center mb-4 md:mb-0">
               <div className="font-semibold text-sm mb-2" style={{ color: 'var(--highlight)' }}>Contact Us</div>
-              <div>Email: <a href="mailto:info@hardwarestore.com" className="hover:underline text-[inherit]">info@hardwarestore.com</a></div>
+              <div>Email: <a href="mailto:info@hardwarestore.com" className="hover:underline text-[inherit]">info@builditstore.com</a></div>
               <div>Phone: <a href="tel:+351123456789" className="hover:underline text-[inherit]">+351 123 456 789</a></div>
               <div>Address: Rua do Computador 42, Lisboa</div>
             </div>
