@@ -88,7 +88,7 @@ function Product() {
 							<span className="ml-2">▾</span>
 						</button>
 						{typeDropdownOpen && (
-							<div className="absolute left-0 mt-1 w-full rounded shadow-lg z-10" style={{ background: 'var(--card)', color: 'var(--fg)' }}>
+							<div className="absolute left-0 mt-1 w-full rounded shadow-lg z-30" style={{ background: 'var(--card)', color: 'var(--fg)' }}>
 								<div
 									className={`px-4 py-2 cursor-pointer hover:bg-orange-200 rounded ${type === '' ? 'font-bold' : ''}`}
 									onClick={() => { setType(''); setTypeDropdownOpen(false); }}
@@ -114,7 +114,7 @@ function Product() {
 							<span className="ml-2">▾</span>
 						</button>
 						{sortDropdownOpen && (
-							<div className="absolute left-0 mt-1 w-full rounded shadow-lg z-10" style={{ background: 'var(--card)', color: 'var(--fg)' }}>
+							<div className="absolute left-0 mt-1 w-full rounded shadow-lg z-30" style={{ background: 'var(--card)', color: 'var(--fg)' }}>
 								<div
 									className={`px-4 py-2 cursor-pointer hover:bg-orange-200 rounded ${sort === 'none' ? 'font-bold' : ''}`}
 									onClick={() => { setSort('none'); setSortDropdownOpen(false); }}
@@ -138,7 +138,7 @@ function Product() {
 							className="border border-orange-400 rounded-lg p-4 shadow cursor-pointer hover:ring-2 hover:ring-orange-400 hover:shadow-lg transition relative group bg-[var(--card)]"
 						>
 							<button
-								className="absolute top-2 right-2 text-yellow-400 hover:text-yellow-500 text-xl z-10 opacity-80 group-hover:opacity-100 focus:opacity-100 transition"
+								className="absolute top-2 right-2 text-yellow-400 hover:text-yellow-500 text-xl z-0 opacity-80 group-hover:opacity-100 focus:opacity-100 transition"
 								title={favs.includes(product.id) ? 'Remove from favourites' : 'Add to favourites'}
 								onClick={e => { e.stopPropagation(); e.preventDefault(); toggleFavourite(product.id); }}
 								tabIndex={0}
