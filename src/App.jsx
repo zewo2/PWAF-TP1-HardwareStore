@@ -43,7 +43,30 @@ function App() {
           <Route path="/cart" element={<Cart />} />
         </Routes>
       </main>
-      <footer className="bg-gray-100 text-center p-2 text-xs text-gray-500">© 2025 Hardware Store</footer>
+        <footer
+          className="flex-none"
+          style={{ background: 'var(--card)', color: 'var(--fg)', minHeight: '64px' }}
+        >
+          <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center md:items-start justify-between gap-8 px-4 py-4">
+            {/* Brand left */}
+            <div className="font-bold text-lg md:text-left text-center w-full md:w-auto mb-4 md:mb-0" style={{ color: 'var(--highlight)' }}>Hardware Store</div>
+            {/* Contact info centered*/}
+            <div className="flex-1 text-xs text-center md:text-center mb-4 md:mb-0">
+              <div className="font-semibold text-sm mb-2" style={{ color: 'var(--highlight)' }}>Contact Us</div>
+              <div>Email: <a href="mailto:info@hardwarestore.com" className="hover:underline text-[inherit]">info@hardwarestore.com</a></div>
+              <div>Phone: <a href="tel:+351123456789" className="hover:underline text-[inherit]">+351 123 456 789</a></div>
+              <div>Address: Rua do Computador 42, Lisboa</div>
+            </div>
+            {/* Links right*/}
+            <nav className="flex flex-col gap-2 text-sm text-right w-full md:w-auto items-end">
+              <div className="font-semibold text-sm mb-2" style={{ color: 'var(--highlight)' }}>Quick Links</div>
+              <Link to="/" className="hover:underline">Home</Link>
+              <Link to="/items" className="hover:underline">Products</Link>
+              <Link to="/contacts" className="hover:underline">Contact</Link>
+              <Link to="/about" className="hover:underline">About</Link>
+            </nav>
+          </div>
+        </footer>
     </div>
   );
 }
