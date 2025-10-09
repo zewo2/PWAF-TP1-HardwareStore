@@ -1,13 +1,6 @@
 import { useEffect, useState } from 'react';
 import { products } from './data.js';
-
-function getFavourites() {
-	try {
-		return JSON.parse(localStorage.getItem('favourites') || '[]');
-	} catch {
-		return [];
-	}
-}
+import { getFavourites } from './utils.js';
 
 export default function Favourites() {
 	const [favs, setFavs] = useState([]);

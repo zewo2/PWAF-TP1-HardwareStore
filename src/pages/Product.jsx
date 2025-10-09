@@ -1,13 +1,7 @@
 import { useState, useEffect } from 'react';
-function getFavourites() {
-	try {
-		return JSON.parse(localStorage.getItem('favourites') || '[]');
-	} catch {
-		return [];
-	}
-}
 import { useLocation } from 'react-router-dom';
 import { products } from './data.js';
+import { getFavourites } from './utils.js';
 
 const productTypes = [
 	'CPU',
