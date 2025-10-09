@@ -55,7 +55,7 @@ function ProductDetails() {
 
 	return (
 		<div className="max-w-2xl mx-auto p-4">
-			<button className="mb-4 text-blue-600 underline" onClick={() => navigate(-1)}>&larr; Back</button>
+			<button className="mb-4 text-blue-600 underline" onClick={() => navigate('/items')}>&larr; Back</button>
 			<div className="flex flex-col md:flex-row gap-6">
 				<div className="flex flex-col items-center">
 					<img src={mainImg} alt={product.name} className="h-48 w-48 object-cover rounded mb-2 border" />

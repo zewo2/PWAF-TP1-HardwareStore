@@ -29,14 +29,23 @@ export default function ThemeToggle() {
     return saved === 'dark';
   });
 
+
   useEffect(() => {
+    // Add transition class for smooth theme change
+    const root = document.documentElement;
+    root.classList.add('theme-transition');
     setThemeVars(dark ? DARK : LIGHT);
     localStorage.setItem('theme', dark ? 'dark' : 'light');
+    // Remove the transition class after the animation
+    const timeout = setTimeout(() => {
+      root.classList.remove('theme-transition');
+    }, 350);
+    return () => clearTimeout(timeout);
   }, [dark]);
 
   return (
     <button
-      className="mr-4 px-3 py-2 rounded-full border font-bold"
+      className="mr-4 px-3 py-2 rounded-full font-bold transition-transform duration-150 hover:scale-95 focus:scale-95"
       style={{ background: 'var(--card)', color: 'var(--highlight)', borderColor: 'var(--border)' }}
       onClick={() => setDark(d => !d)}
       aria-label="Toggle dark mode"

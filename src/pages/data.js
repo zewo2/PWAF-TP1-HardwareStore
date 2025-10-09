@@ -136,5 +136,92 @@ export const products = [
       'https://images.unsplash.com/photo-1519125323398-675f0ddb6308',
       'https://images.unsplash.com/photo-1465101046530-73398c7f28ca'
     ]
+  },
+  {
+    id: 12,
+    name: 'AMD Ryzen 7 7800X3D',
+    brand: 'AMD',
+    type: 'CPU',
+    description: '8-core, 16-thread gaming CPU with 3D V-Cache for top-tier performance.',
+    price: 429.99,
+    discountPercent: 8,
+    images: [
+      'https://images.unsplash.com/photo-1517336714731-489689fd1ca8',
+      'https://images.unsplash.com/photo-1519125323398-675f0ddb6308'
+    ]
+  },
+  {
+    id: 13,
+    name: 'Gigabyte GeForce RTX 4070',
+    brand: 'Gigabyte',
+    type: 'GPU',
+    description: 'High-performance graphics card for 1440p gaming and content creation.',
+    price: 699.99,
+    images: [
+      'https://images.unsplash.com/photo-1519125323398-675f0ddb6308',
+      'https://images.unsplash.com/photo-1517336714731-489689fd1ca8'
+    ]
+  },
+  {
+    id: 14,
+    name: 'Kingston Fury Beast 16GB DDR5',
+    brand: 'Kingston',
+    type: 'RAM',
+    description: 'Affordable DDR5 memory for next-gen systems.',
+    price: 99.99,
+    images: [
+      'https://images.unsplash.com/photo-1465101046530-73398c7f28ca',
+      'https://images.unsplash.com/photo-1465101046530-73398c7f28ca'
+    ]
+  },
+  {
+    id: 15,
+    name: 'SteelSeries Apex Pro Keyboard',
+    brand: 'SteelSeries',
+    type: 'Peripheral',
+    description: 'Mechanical gaming keyboard with adjustable actuation switches.',
+    price: 199.99,
+    discountPercent: 10,
+    images: [
+      'https://images.unsplash.com/photo-1517336714731-489689fd1ca8',
+      'https://images.unsplash.com/photo-1519125323398-675f0ddb6308'
+    ]
+  },
+  {
+    id: 16,
+    name: 'Western Digital Black 4TB NVMe SSD',
+    brand: 'Western Digital',
+    type: 'Storage',
+    description: 'High-capacity, high-speed NVMe SSD for demanding users.',
+    price: 499.99,
+    images: [
+      'https://images.unsplash.com/photo-1465101046530-73398c7f28ca',
+      'https://images.unsplash.com/photo-1517336714731-489689fd1ca8'
+    ]
+  },
+  {
+    id: 17,
+    name: 'EVGA SuperNOVA 1000W PSU',
+    brand: 'EVGA',
+    type: 'PSU',
+    description: '1000W fully modular power supply for high-end builds.',
+    price: 229.99,
+    discountPercent: 7,
+    images: [
+      'https://images.unsplash.com/photo-1517336714731-489689fd1ca8',
+      'https://images.unsplash.com/photo-1519125323398-675f0ddb6308'
+    ]
+  },
+  {
+    id: 18,
+    name: 'Lian Li PC-O11 Dynamic',
+    brand: 'Lian Li',
+    type: 'Case',
+    description: 'Premium mid-tower case with tempered glass and modular design.',
+    price: 159.99,
+    images: [
+      'https://images.unsplash.com/photo-1465101046530-73398c7f28ca',
+      'https://images.unsplash.com/photo-1517336714731-489689fd1ca8'
+    ]
   }
 ];
