@@ -1,3 +1,7 @@
+/* Smooth theme transition utility */
+.theme-transition, .theme-transition * {
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
 
 @import "tailwindcss";
 

@@ -29,9 +29,18 @@ export default function ThemeToggle() {
     return saved === 'dark';
   });
 
+
   useEffect(() => {
+    // Add transition class for smooth theme change
+    const root = document.documentElement;
+    root.classList.add('theme-transition');
     setThemeVars(dark ? DARK : LIGHT);
     localStorage.setItem('theme', dark ? 'dark' : 'light');
+    // Remove the transition class after the animation
+    const timeout = setTimeout(() => {
+      root.classList.remove('theme-transition');
+    }, 350);
+    return () => clearTimeout(timeout);
   }, [dark]);
 
   return (
