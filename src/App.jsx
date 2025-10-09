@@ -1,15 +1,15 @@
 import { Routes, Route, Link } from 'react-router-dom';
-import DropdownMenu from './DropdownMenu.jsx';
-import Home from './Home.jsx';
-import AboutUs from './AboutUs.jsx';
-import Product from './Product.jsx';
-import ProductDetails from './ProductDetails.jsx';
-import Favourites from './Favourites.jsx';
-import Contacts from './Contacts.jsx';
-import Cart from './Cart.jsx';
-import CartCount from './CartCount.jsx';
-import ThemeToggle from './ThemeToggle.jsx';
-import './App.css';
+import DropdownMenu from './components/DropdownMenu.jsx';
+import Home from './pages/Home.jsx';
+import AboutUs from './pages/AboutUs.jsx';
+import Product from './pages/Product.jsx';
+import ProductDetails from './pages/ProductDetails.jsx';
+import Favourites from './pages/Favourites.jsx';
+import Contacts from './pages/Contacts.jsx';
+import Cart from './pages/Cart.jsx';
+import CartCount from './components/CartCount.jsx';
+import ThemeToggle from './components/ThemeToggle.jsx';
+import './styles/App.css';
 
 function App() {
   return (
