@@ -135,7 +135,7 @@ function Product() {
 					{filtered.map(product => (
 						<div
 							key={product.id}
-							className="border rounded-lg p-4 shadow hover:shadow-lg transition relative group bg-[var(--card)]"
+							className="border border-orange-400 rounded-lg p-4 shadow cursor-pointer hover:ring-2 hover:ring-orange-400 hover:shadow-lg transition relative group bg-[var(--card)]"
 						>
 							<button
 								className="absolute top-2 right-2 text-yellow-400 hover:text-yellow-500 text-xl z-10 opacity-80 group-hover:opacity-100 focus:opacity-100 transition"

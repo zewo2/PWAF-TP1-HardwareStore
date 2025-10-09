@@ -31,7 +31,7 @@ function Home() {
             <a
               key={item.id}
               href={`/items/${item.id}`}
-              className="border rounded-lg p-4 shadow w-64 flex flex-col items-center cursor-pointer hover:ring-2 hover:ring-orange-400 hover:shadow-lg transition"
+              className="border rounded-lg p-4 shadow w-64 flex flex-col items-center cursor-pointer hover:ring-2 hover:ring-orange-400 hover:shadow-lg transition bg-[var(--card)]"
               style={{ textDecoration: 'none' }}
             >
               <img src={item.images[0]} alt={item.name} className="h-24 w-24 object-cover rounded mb-2" />
