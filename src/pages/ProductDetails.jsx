@@ -72,7 +72,7 @@ function ProductDetails() {
 					<div className="flex flex-col md:flex-row gap-6">
 						<div className="flex flex-col items-center">
 							<div className="relative flex items-center justify-center mb-2 group">
-								<img src={mainImg} alt={product.name} className="h-86 w-86 object-cover rounded border" />
+								<img src={mainImg} alt={product.name} className="h-80 w-80 object-cover rounded border" />
 								{product.images.length > 1 && (
 									<>
 									<button

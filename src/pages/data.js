@@ -50,8 +50,7 @@ export const products = [
     images: [
       'https://www.powerplanetonline.com/cdnassets/logitech_mx_master_3s_bluetooth_grafito_raton_inalambrico_8000dpi_09_ad_l.jpg',
       'https://s1.kuantokusta.pt/img_upload/produtos_informatica/849860_3_logitech-mx-master-3s-wireless-bluetooth-black-910-006559.jpg',
-      'https://img.globaldata.pt/products/910-005710_3.jpg',
-
+      'https://img.globaldata.pt/products/910-005710_3.jpg'
     ]
   },
   {
