@@ -9,6 +9,7 @@ import Contacts from './pages/Contacts.jsx';
 import Cart from './pages/Cart.jsx';
 import CartCount from './components/CartCount.jsx';
 import ThemeToggle from './components/ThemeToggle.jsx';
+import NotFound from './pages/NotFound.jsx';
 
 function App() {
   return (
@@ -43,6 +44,7 @@ function App() {
           <Route path="/about" element={<AboutUs />} />
           <Route path="/contacts" element={<Contacts />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
         <footer
