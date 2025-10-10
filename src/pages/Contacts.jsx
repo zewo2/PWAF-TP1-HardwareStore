@@ -1,15 +1,43 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function Contacts() {
+		const STORAGE_KEY = 'contactsFormData';
 
-		const [form, setForm] = useState({
-			name: '',
-			email: '',
-			reason: '',
-			message: '',
+		const [form, setForm] = useState(() => {
+			// Initialize from localStorage if available
+			try {
+				const saved = localStorage.getItem(STORAGE_KEY);
+				if (saved) {
+					const parsed = JSON.parse(saved);
+					return {
+						name: '',
+						email: '',
+						reason: '',
+						message: '',
+						...parsed,
+					};
+				}
+			} catch {
+				// ignore parse/storage errors and fall back to defaults
+			}
+			return {
+				name: '',
+				email: '',
+				reason: '',
+				message: '',
+			};
 		});
 		const [errors, setErrors] = useState({});
 		const [success, setSuccess] = useState(false);
+
+		// Persist form to localStorage on change
+		useEffect(() => {
+			try {
+				localStorage.setItem(STORAGE_KEY, JSON.stringify(form));
+			} catch {
+				// ignore quota/security errors silently
+			}
+		}, [form]);
 
 	function validate(values) {
 		const errs = {};
@@ -47,6 +75,8 @@ export default function Contacts() {
 			if (Object.keys(errs).length === 0) {
 				setSuccess(true);
 				setForm({ name: '', email: '', reason: '', message: '' });
+				// Clear saved draft on successful submit
+				try { localStorage.removeItem(STORAGE_KEY); } catch { /* ignore */ }
 				// Optionally clear success after a delay
 				setTimeout(() => setSuccess(false), 5000);
 			} else {

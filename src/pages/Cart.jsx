@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { products } from './data.js';
+import { Link } from 'react-router-dom';
 
 function getCartFromStorage() {
   try {
@@ -12,6 +13,8 @@ function getCartFromStorage() {
 export default function Cart() {
   const [checkoutMsg, setCheckoutMsg] = useState('');
   const [cart, setCart] = useState(() => getCartFromStorage());
+  const [discountCode, setDiscountCode] = useState('');
+  const [discountApplied, setDiscountApplied] = useState(false);
 
   useEffect(() => {
     const syncCart = () => setCart(getCartFromStorage());
@@ -73,14 +76,46 @@ export default function Cart() {
     setCheckoutMsg('Checkout successful! Thank you for your purchase.');
   };
 
-  const total = cartItems.reduce((sum, item) => {
+  let total = cartItems.reduce((sum, item) => {
     const price = item.discountPercent ? item.price * (1 - item.discountPercent / 100) : item.price;
     return sum + price * item.qty;
   }, 0);
+  if (discountApplied) {
+    total = 0;
+  }
 
   return (
     <div className="max-w-2xl mx-auto p-4">
       <h2 className="text-2xl font-bold mb-4">Your Cart</h2>
+  {/* Discount code input */}
+  <div className="mb-1 font-semibold text-gray-700 dark:text-zinc-200">Have a promotional code?</div>
+  <div className="mb-4 flex items-center gap-2">
+        <input
+          type="text"
+          className="border rounded px-2 py-1"
+          placeholder="Discount code"
+          value={discountCode}
+          onChange={e => {
+            setDiscountCode(e.target.value);
+            if (discountApplied && e.target.value !== 'solidsnake') setDiscountApplied(false);
+          }}
+          disabled={discountApplied}
+        />
+        <button
+          className="px-3 py-1 rounded bg-orange-500 text-white font-bold disabled:opacity-60"
+          disabled={discountApplied || discountCode === ''}
+          onClick={() => {
+            if (discountCode.trim().toLowerCase() === 'solidsnake') {
+              setDiscountApplied(true);
+            }
+          }}
+        >
+          Apply
+        </button>
+        {discountApplied && (
+          <span className="ml-2 text-green-600 font-semibold">100% discount applied!</span>
+        )}
+      </div>
       {cartItems.length === 0 ? (
         <div className="text-gray-500">Your cart is empty.</div>
       ) : (
@@ -97,11 +132,18 @@ export default function Cart() {
             {cartItems.map(item => (
               <tr key={item.id} className="border-t">
                 <td className="p-2">
-                  <div className="font-bold">{item.name}</div>
+                  <div className="flex items-center gap-2">
+                    {item.images && item.images.length > 0 && (
+                      <img src={item.images[0]} alt={item.name} className="w-10 h-10 object-cover rounded border" />
+                    )}
+                    <Link to={`/products/${item.id}`} className="font-bold text-blue-700 hover:underline">
+                      {item.name}
+                    </Link>
+                  </div>
                   <div className="text-xs text-gray-500">{item.brand} &middot; {item.type}</div>
                 </td>
                 <td className="p-2 text-center">{item.qty}</td>
-                <td className="p-2 text-right">€{((item.discountPercent ? item.price * (1 - item.discountPercent / 100) : item.price) * item.qty).toFixed(2)}</td>
+                <td className="p-2 text-right">€{discountApplied ? '0.00' : ((item.discountPercent ? item.price * (1 - item.discountPercent / 100) : item.price) * item.qty).toFixed(2)}</td>
                 <td className="p-2 text-center">
                   <button className="px-2 py-1 bg-blue-100 rounded mr-1" onClick={() => handleAdd(item.id)}>+</button>
                   <button className="px-2 py-1 bg-blue-100 rounded mr-1" onClick={() => handleSubtract(item.id)}>-</button>

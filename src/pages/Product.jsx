@@ -140,12 +140,12 @@ function Product() {
 								{favs.includes(product.id) ? '★' : '☆'}
 							</button>
 							<a
-								href={`/items/${product.id}`}
+								href={`/products/${product.id}`}
 								className="block outline-none"
 								tabIndex={-1}
 							>
 								<div className="mb-2 flex justify-center">
-									<img src={product.images[0]} alt={product.name} className="h-24 w-24 object-cover rounded" />
+									<img src={product.images[0]} alt={product.name} className="h-48 w-48 object-cover rounded" />
 								</div>
 								<h2 className="text-lg font-bold">{product.name}</h2>
 								<p className="text-sm text-gray-500">{product.brand} &middot; {product.type}</p>
