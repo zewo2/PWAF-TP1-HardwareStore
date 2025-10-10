@@ -23,7 +23,7 @@ export default function Favourites() {
 
 	return (
 		<div className="max-w-5xl mx-auto p-4">
-			<h2 className="text-2xl font-bold mb-6" style={{ color: 'var(--highlight)' }}>Your Favourites</h2>
+			<h2 className="text-2xl text-center font-bold mb-6" style={{ color: 'var(--highlight)' }}>Your Favourites</h2>
 			<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
 						{favProducts.map(product => (
 							<div key={product.id} className="border border-orange-400 rounded-lg p-4 shadow cursor-pointer hover:ring-2 hover:ring-orange-400 hover:shadow-lg transition relative group bg-[var(--card)]">

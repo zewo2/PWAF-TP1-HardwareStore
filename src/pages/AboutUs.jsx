@@ -8,7 +8,7 @@ export default function AboutUs() {
 			<div className="mb-6 text-center">
 				<span className="inline-block bg-orange-100 text-orange-700 px-3 py-1 rounded-full font-semibold">Serving tech enthusiasts since 2022</span>
 			</div>
-			<h3 className="text-xl font-semibold mb-2" style={{ color: 'var(--highlight)' }}>Our Team</h3>
+			<h3 className="text-xl text-center font-semibold mb-2" style={{ color: 'var(--highlight)' }}>Our Team</h3>
 			<ul className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-4">
 				<li className="bg-white/10 rounded p-4 shadow w-full sm:w-1/3 text-center">
 					<div className="font-bold text-lg">Bimg Bomss</div>
