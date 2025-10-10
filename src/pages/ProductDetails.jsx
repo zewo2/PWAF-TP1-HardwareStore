@@ -1,4 +1,4 @@
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { products } from './data.js';
 
@@ -38,7 +38,14 @@ function ProductDetails() {
 	}, [favourites]);
 
 	if (!product) {
-		return <div className="text-center text-red-600">Product not found.</div>;
+		return (
+			<div className="max-w-xl mx-auto text-center py-12">
+				<div className="text-center text-red-600 font-semibold mb-4">Product not found.</div>
+				<div className="flex items-center justify-center gap-3">
+					<Link to="/products" className="px-4 py-2 rounded bg-blue-600 text-white">Browse Other Products</Link>
+				</div>
+			</div>
+		);
 	}
 
 	const isFavourite = favourites.includes(product.id);
