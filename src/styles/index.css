@@ -5,6 +5,11 @@
 
 @import "tailwindcss";
 
+#root {
+  margin: 0 auto;
+  /* padding: 2rem; */
+  text-align: center;
+}
 
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -30,7 +35,7 @@
 @media (prefers-color-scheme: dark) {
   :root {
     color: rgba(255, 255, 255, 0.87);
-    background-color: #242424;
+    background-color: var(--bg);
     --bg: #242424;
     --fg: #fff;
     --card: #333a41;
@@ -54,8 +59,8 @@ body {
   place-items: center;
   background: var(--bg);
   color: var(--fg);
-  min-width: 320px;
-  min-height: 100vh;
+  /* min-width: 320px;
+  min-height: 100vh; */
 }
 
 h1 {
@@ -94,11 +99,11 @@ button:focus-visible {
 
 @media (prefers-color-scheme: light) {
   :root {
-    color: #213547;
+    color: #473a21;
     background-color: #ffffff;
   }
   a:hover {
-    color: #747bff;
+    color: #f4a837;
   }
   button {
     background-color: #f9f9f9;

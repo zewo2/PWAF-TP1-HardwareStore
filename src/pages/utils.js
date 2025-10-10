@@ -1,6 +1,4 @@
-// src/pages/utils.js
-// Utility functions for BuildIT SPA
-
+// get favs to avoid duped code
 export function getFavourites() {
   try {
     return JSON.parse(localStorage.getItem('favourites') || '[]');

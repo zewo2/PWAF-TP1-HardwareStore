@@ -1,4 +1,3 @@
-// Example product data for hardware store
 export const products = [
   {
     id: 1,

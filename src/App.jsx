@@ -9,7 +9,6 @@ import Contacts from './pages/Contacts.jsx';
 import Cart from './pages/Cart.jsx';
 import CartCount from './components/CartCount.jsx';
 import ThemeToggle from './components/ThemeToggle.jsx';
-import './styles/App.css';
 
 function App() {
   return (
@@ -45,7 +44,7 @@ function App() {
         </Routes>
       </main>
         <footer
-          className="flex-none"
+          className="mt-auto flex-none"
           style={{ background: 'var(--card)', color: 'var(--fg)', minHeight: '64px' }}
         >
           <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center md:items-start justify-between gap-8 px-4 py-4">

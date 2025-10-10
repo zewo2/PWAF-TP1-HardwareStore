@@ -49,11 +49,11 @@ PWAF-TP1/
 │   │   ├── Home.jsx
 │   │   ├── Product.jsx
 │   │   ├── ProductDetails.jsx
+│   │   ├── utils.js
 │   │   └── data.js
 │   ├── assets/
 │   │   └── react.svg
 │   ├── styles/
-│   │   ├── App.css
 │   │   └── index.css
 │   ├── App.jsx
 │   ├── main.jsx
