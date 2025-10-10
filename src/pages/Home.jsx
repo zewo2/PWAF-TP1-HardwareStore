@@ -1,4 +1,3 @@
-
 import { useState, useMemo } from 'react';
 import { products } from './data.js';
 
@@ -24,13 +23,13 @@ function Home() {
         Lose yourself in our selection of powerful tech.
       </p>
       <div className="mb-4 text-2xl font-bold text-center text-gray-800">Our Picks</div>
-      <div className="flex items-center justify-center gap-2">
+      <div className="flex !items-center !justify-center gap-2">
         <button onClick={handlePrev} disabled={start === 0} className="px-2 py-1 bg-gray-200 rounded-full text-xl font-bold disabled:opacity-50">&#8592;</button>
         <div className="flex gap-6">
           {visible.map(item => (
             <a
               key={item.id}
-              href={`/items/${item.id}`}
+              href={`/products/${item.id}`}
               className="border rounded-lg p-4 shadow w-64 flex flex-col items-center cursor-pointer hover:ring-2 hover:ring-orange-400 hover:shadow-lg transition bg-[var(--card)]"
               style={{ textDecoration: 'none' }}
             >

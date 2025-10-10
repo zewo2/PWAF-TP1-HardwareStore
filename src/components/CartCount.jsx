@@ -34,8 +34,8 @@ export default function CartCount() {
 
   return (
     <span
-      className="ml-1 rounded-full px-2 py-0.5 text-xs font-bold"
-      style={{ background: 'var(--card)', color: 'var(--highlight)' }}
+      className="cart-count ml-1 text-xs font-bold leading-none inline-flex items-center"
+      style={{ color: 'var(--highlight)' }}
     >
       {count}
     </span>

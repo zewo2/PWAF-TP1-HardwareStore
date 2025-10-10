@@ -23,25 +23,25 @@ export default function Favourites() {
 
 	return (
 		<div className="max-w-5xl mx-auto p-4">
-			<h2 className="text-2xl font-bold mb-6" style={{ color: 'var(--highlight)' }}>Your Favourites</h2>
+			<h2 className="text-2xl text-center font-bold mb-6" style={{ color: 'var(--highlight)' }}>Your Favourites</h2>
 			<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
 						{favProducts.map(product => (
-							<div key={product.id} className="border border-orange-400 rounded-lg p-4 shadow cursor-pointer hover:ring-2 hover:ring-orange-400 hover:shadow-lg transition relative group bg-[var(--card)]">
+							<div key={product.id} className="favourite-card border border-orange-400 rounded-lg p-4 shadow cursor-pointer hover:ring-2 hover:ring-orange-400 hover:shadow-lg transition relative group bg-[var(--card)]">
 								<button
-									className="absolute top-2 right-2 text-yellow-400 hover:text-yellow-500 text-xl z-10"
+									className="absolute top-2 right-2 text-yellow-400 hover:text-yellow-500 text-xl z-0"
 									title="Remove from favourites"
 									onClick={e => { e.stopPropagation(); e.preventDefault(); removeFavourite(product.id); }}
 								>
 									★
 								</button>
 								<a
-									href={`/items/${product.id}`}
-									className="block outline-none focus:ring-2 focus:ring-orange-400 rounded"
+									href={`/products/${product.id}`}
+									className="block outline-none rounded"
 									tabIndex={-1}
 									style={{ textDecoration: 'none' }}
 								>
 									<div className="mb-2 flex justify-center">
-										<img src={product.images[0]} alt={product.name} className="h-24 w-24 object-cover rounded" />
+										<img src={product.images[0]} alt={product.name} className="h-48 w-48 object-cover rounded" />
 									</div>
 									<h3 className="text-lg font-bold">{product.name}</h3>
 									<p className="text-sm text-gray-500">{product.brand} &middot; {product.type}</p>
