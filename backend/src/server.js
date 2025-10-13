@@ -6,7 +6,7 @@ import contactsroutes from './routes/contactsroutes.js';
 import productsroutes from './routes/productsroutes.js';
 
 const app = express();
-app.use(cors({origin: 'http://localhost:5137'})); //froentend Vite/React
+app.use(cors({origin: 'http://localhost:5173'})); //frontend Vite/React
 app.use(express.json());
 
 // Health check route
